@@ -7,4 +7,4 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: mydatabase
     ports:
-      - "5432:5432"
+      - "5435:5432"
