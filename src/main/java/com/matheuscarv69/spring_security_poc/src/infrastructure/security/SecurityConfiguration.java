@@ -1,5 +1,6 @@
 package com.matheuscarv69.spring_security_poc.src.infrastructure.security;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,11 +13,24 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+/**
+ * SecurityConfiguration.java
+ * This class is responsible for configuring the security settings of the application.
+ * It defines the security filter chain, authentication manager, and password encoder.
+ *
+ * @author Matheus Carvalho
+ * @version 1.0
+ * @since 2025-04-01
+ */
 @Slf4j
 @Configuration
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class SecurityConfiguration {
+
+    private final SecurityFilter securityFilter;
 
     /**
      * 1. Configures the security filter for the application.
@@ -41,6 +55,7 @@ public class SecurityConfiguration {
                         .hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
+                .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 
