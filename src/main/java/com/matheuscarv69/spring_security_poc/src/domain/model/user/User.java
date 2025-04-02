@@ -1,8 +1,8 @@
-package com.matheuscarv69.spring_security_poc.src.domain.model;
+package com.matheuscarv69.spring_security_poc.src.domain.model.user;
 
-import com.matheuscarv69.spring_security_poc.src.domain.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -14,6 +14,7 @@ import java.util.List;
 
 @Data
 @Entity
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "users")

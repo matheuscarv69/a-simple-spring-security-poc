@@ -1,4 +1,4 @@
-package com.matheuscarv69.spring_security_poc.src.domain.enums;
+package com.matheuscarv69.spring_security_poc.src.domain.model.user;
 
 public enum UserRole {
 

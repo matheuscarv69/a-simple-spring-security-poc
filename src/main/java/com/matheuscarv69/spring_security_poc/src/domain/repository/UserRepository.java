@@ -1,6 +1,6 @@
 package com.matheuscarv69.spring_security_poc.src.domain.repository;
 
-import com.matheuscarv69.spring_security_poc.src.domain.model.User;
+import com.matheuscarv69.spring_security_poc.src.domain.model.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Repository;
