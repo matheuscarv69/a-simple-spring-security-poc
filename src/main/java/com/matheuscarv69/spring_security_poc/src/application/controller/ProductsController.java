@@ -21,11 +21,11 @@ public class ProductsController {
     @PostMapping
     public ResponseEntity<Product> addProduct(@RequestBody Product product) {
 
-        log.info("PRODUCTS CONTROLLER - addProduct - Iniciando adição de produto: {}", product);
+        log.info("PRODUCTS CONTROLLER - addProduct - Starting to add product: {}", product);
 
         Product savedProduct = productService.addProduct(product);
 
-        log.info("PRODUCTS CONTROLLER - addProduct - Produto adicionado: {}", savedProduct);
+        log.info("PRODUCTS CONTROLLER - addProduct - Product added: {}", savedProduct);
 
         return ResponseEntity.ok(savedProduct);
 
@@ -34,11 +34,11 @@ public class ProductsController {
     @GetMapping
     public ResponseEntity<List<Product>> listProducts() {
 
-        log.info("PRODUCTS CONTROLLER - listProducts - Iniciando listagem de produtos");
+        log.info("PRODUCTS CONTROLLER - listProducts - Starting to list products");
 
         List<Product> products = productService.listProducts();
 
-        log.info("PRODUCTS CONTROLLER - listProducts - Finalizando listagem de produtos");
+        log.info("PRODUCTS CONTROLLER - listProducts - Finished listing products");
 
         return ResponseEntity.ok(products);
     }
